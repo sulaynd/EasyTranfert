@@ -1,36 +1,33 @@
 ﻿# Exemple d'application de transfert d'argent
-
-Comment faire pour sécuriser votre microservice developper avec spring boot ? Pour cela nous allons utilisé keycloak. 
+Ce projet est juste un exercice pour réaliser une application de transfert d'argent avec springBoot, JPA, Thymeleaf et MySQL. Il peut servir de point de départ pour un vrai projet. 
+- SpringBoot
+- JPA
+- Thymeleaf
+- Mysql
 ![enter image description here](easy2.JPG)
 
-**Keycloak** est un produit logiciel open source permettant la connexion unique avec la gestion des identités "Identity management"  et la gestion des accès "Gestion des accès" destinées aux applications et services modernes. Depuis mars 2018, ce projet communautaire JBoss est sous la direction de Red Hat, qui l'utilise comme projet en amont (développement logiciel)") pour leur produit RH-SSO.
+# Fontionnalités de base
+
+- Gestion Des prestataires (gerer par le partenaire)
+- Gestion des agences (gerer par un superviseur)
+- Gestion des guichets (Gerer par des guichetiers)
+- etc.........
+
+Un prestataire peut avoir plusieurs agences et dans chaque agence on peut avoir plusieurs guichets.
+Le prestataire a un compte qui lui permet de gérer toutes les agences.
+
+Chaque agence à un superviseur et ce dernier a un compte spécifique qui lui permet de créer des guichets 
+
+Les guichets peuvent êtres paramétrés pour ne faire que des envois et ou des retraits.
+
+Dans une agence On peut verser de l’argent ou faire un retrait de liquidité. Pour chaque agence on peut paramétrer le taux à l’envoi, le taux pour le retrait et le plafond. 
 
 
-# Installation et démarrage keycloak
+Redaction en cours ............
 
-Tres facile, pour installer keycloak il suffit de telecharger le zip de la version standalone sur le [site web de keycloak]("[https://www.keycloak.org/downloads](https://www.keycloak.org/downloads)"). Decompresser le fichier sur votre machine et positionner vous sur le repertoire /bin puis executer l'application 
-> keycloak-10.0.1/bin/standalone.bat
-> 
-Apres le demarrage du service, acceder a l'interface via 
+![enter image description here](easy3.JPG)
+![enter image description here](easy4.JPG)
+![enter image description here](easy1.JPG)
 
-> http://votreHost:8080 dans notre cas nous sommes en localhost
 
-- Créer un profil Admin
-- Créer votre application a sécurisée
-- Créer un ou plusieurs utilisateurs 
-- Créer les roles de votre choix
-- Affecter a chaque utilisateur un rôle
-
-## MicroService SpringBoot
-
-Ici nous supposons que vous avez déjà créer votre micro-service. Pour notre cas le micro-service permet d’accéder a la ressource suivante 
-> http://localhost:8081/contributions
-
-1. Dans notre code nous allons prendre la précaution d'exposer les ID des contribution avec Spring Data.
-> @Autowired  
-private RepositoryRestConfiguration restConfiguration;
-.
-public void run(String... args) throws Exception {
-	restConfiguration.exposeIdsFor(Contribution.class);
-}
 
