@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="templateClient">
+<head>
+<meta charset="utf-8" />
+<title>Isi Transfert</title>
+</head>
+<body>
+<div layout:fragment="content">
+ 
+  
+<div class="row" >
+  <div class="span11" id="containpage"> 
+  	<div class="accordion" id="accordion10">
+		<div class="accordion-group" id="titreaccordeon1">
+			<div class="accordion-heading" id="headaccordeon">
+				<span><strong>Paiement de facture</strong></span>  
+			</div>
+		<div id="" class="">
+			<div class="accordion-inner">
+				<div class="row" id="recherchpaiement">
+				      <div class="span8">
+				        <form class="form-inline">
+				          <label ><b>Factures :</b></label>
+				          <select class="span2" > <option>Senelec</option> <option>SDE</option> <option>SONATEL</option> </select>
+				          <input type="text" class="input" placeholder="Saisir le numero de police" />
+				          <button type="submit" class="btn ">Rechercher</button>
+				        </form>
+				      </div>
+   				</div>
+			</div>
+		</div>
+		</div>
+		
+		
+	</div>
+  </div>
+</div>
+   
+
+  
+</div>
+</body>
+</html>

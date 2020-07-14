@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<title>Isi Transfert</title>
+ <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+    <!-- Bootstrap 3.3.4 -->
+    <link href="../static/tempAdmin/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" th:href="@{/tempAdmin/bootstrap/css/bootstrap.min.css}" />
+    <!-- Font Awesome Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="../static/tempAdmin/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" th:href="@{/tempAdmin/dist/css/AdminLTE.min.css}" />
+  
+    <link href="../static/tempAdmin/dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" th:href="@{/tempAdmin/dist/css/skins/skin-blue.min.css}"  />
+</head>
+<body class="login-page">
+
+
+  <div class="login-box">
+      <div class="login-box-body">
+          <div align="center">
+          	<img th:src="@{tempClient/images/imauth.png}" width="200"   />
+          </div>	
+      	  <p class="login-box-msg">Espace d'administration</p>
+      	   <form th:action="@{homeadmin}">
+      	   		<div class="form-group has-feedback">
+		            <input type="text" class="form-control" placeholder="Email"/>
+		            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+		        </div>
+		        <div class="form-group has-feedback">
+		            <input type="password" class="form-control" placeholder="Password"/>
+		            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+	          	</div>
+	          	<div class="row">
+		            <div class="col-xs-8">    
+		              <div class="checkbox icheck">
+		               
+		              </div>                        
+		            </div>
+		            <div class="col-xs-4">
+		              <button type="submit" class="btn btn-info btn-block btn-flat">Connecter</button>
+		            </div>
+	          	</div>
+      	   	
+      	   </form>
+      	   <a href="#">Mot de passe oublié ?</a><br/>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="../static/tempAdmin/plugins/jQuery/jQuery-2.1.3.min.js" th:src="@{/tempAdmin/plugins/jQuery/jQuery-2.1.3.min.js}"></script>
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src="../static/tempAdmin/bootstrap/js/bootstrap.min.js" type="text/javascript" th:src="@{/tempAdmin/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- AdminLTE App -->
+    <script src="../static/tempAdmin/dist/js/app.min.js" type="text/javascript" th:src="@{/tempAdmin/dist/js/app.min.js}"></script>
+</body>
+</html>

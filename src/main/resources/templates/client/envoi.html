@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="templateClient">
+<head>
+<meta charset="utf-8" />
+<title>Isi Transfert</title>
+</head>
+<body>
+<div layout:fragment="content">
+ 
+  
+<div class="row" >
+  <div class="span11" id="containpage"><div th:if="${notif}"><span th:text="${notif}"></span></div>
+  	 <form th:action="@{envoitrans}">
+  	 <input type="hidden" class="input"  name="idcompte" th:value="${compte.idcompte}" />
+  	 	  <table width="100%" >
+  	 	  	<tr align="center">
+  	 	  		<td>
+  	 	  			 <div id="contener" class="span5">
+  	 	  			 	<div id="content" ><span class="titre">Envoyeur</span>
+  	 	  			 		  <table id="tabform" >
+  	 	  			 		  	 <tr>
+                     				<td><h6>Pays: </h6> </td><td><select name="paysender" > <option>Senegal</option> </select></td>
+                 				 </tr>
+                 				 <tr>
+                 				 	<td><h6 align="left">Nom:</h6></td>
+                 				 	<td><input type="text" class="input"  placeholder="" name="nomsender" th:required="required" /> <font size="+2" color="#FF0000"> *</font></td>
+                 				 </tr>
+                 				 <tr>
+                 				 	<td><h6>Prenom:</h6> </td>
+                 				 	<td><input type="text" class="input"  placeholder="" name="prenomsender" th:required="required" /> <font size="+2" color="#FF0000"> *</font></td>
+                 				 </tr>
+                 				 <tr>
+                 				 	<td><h6>Telephone:</h6></td>
+                 				 	<td><input type="number" class="input"  placeholder="" name="telsender" th:required="required" /> <font size="+2" color="#FF0000"> *</font></td>
+                 				 </tr>
+                 				 <tr>
+                 				 	<td><h6 align="left">Montant (Cfa):</h6> </td>
+                 				 	<td><input type="number" class="input"  placeholder="" name="montant" th:required="required" /> <font size="+2" color="#FF0000"> *</font></td>
+                 				 </tr>
+                 				 <tr>
+                 				 	<td><h6>Type de piece: </h6> </td>
+                 				 	<td><select name="piece" >  
+				                      <option >CNI</option>
+				                      <option>Passeport</option>
+				                      <option>Permis </option>
+                      					</select> 
+                      			   </td>
+                 				 </tr>
+                 				
+  	 	  			 		  </table>
+  	 	  			 	</div>
+  	 	  			 </div>
+  	 	  		</td>
+  	 	  		
+  	 	  		<td>
+  	 	  			 <div id="contener" class="span5">
+     					<div id="content"><span class="titre">Beneficiaire</span>
+     						  <table id="tabform" >
+     						  	<tr>
+     						  		<td><h6>Pays: </h6> </td>
+                					<td><select name="paysrecep" > <option>Senegal</option> </select></td>
+     						  	</tr>
+     						  	<tr>
+     						  		<td><h6 align="left">Nom: </h6></td>
+                					<td><input type="text" class="input"  placeholder="" name="nomrecep" th:required="required" /> <font size="+2" color="#FF0000"> *</font></td>
+     						  	</tr>
+     						  	<tr>
+     						  		<td><h6>Prenom:  </h6></td>
+                					<td><input type="text" class="input"  placeholder="" name="prenomrecep"  /> <font size="+2" color="#FF0000"> *</font></td>
+     						  	</tr>
+     						  	<tr>
+     						  		<td><h6>Telephone: </h6> </td>
+                				    <td><input type="number" class="input"  placeholder="" name="telrecep" th:required="required" /> <font size="+2" color="#FF0000"> *</font></td>
+     						  	</tr>
+     						  	<tr>
+     						  		<td><h6>Adresse: </h6> </td>
+                					<td><input type="text" class="input"  placeholder="" name="adresserecep" th:required="required" /></td>
+     						  	</tr>
+     						  	<tr>
+     						  		<td><h6>Code secret: </h6></td>
+                					<td><input type="text" class="input"  placeholder="" name="codesecret" /></td>
+     						  	</tr>
+     						  </table>
+     					</div>
+     				</div>
+  	 	  		</td>
+  	 	  	</tr>
+  	 	  </table>
+  	 	  <table width="30%" align="center">
+			 <tr align="center">
+				<td><button type="" class="btn btn-primary btn-info ">Valider</button></td>
+				<td><button type="reset" class="btn btn-primary btn-info">Annuler</button></td>
+			 </tr>
+		  </table>
+  	 </form>
+  
+  	
+  	 
+  	 
+  	 
+  </div>
+</div> 
+  
+  
+  
+  
+ 
+</div>
+</body>
+</html>

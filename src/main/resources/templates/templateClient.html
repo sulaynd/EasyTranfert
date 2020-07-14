@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<title>Easy Transfert</title>
+
+ <link rel="icon" href="vues/images/ptlogo.jpg" type="image/gif" />
+ <link href="../static/tempClient/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" media="screen" th:href="@{/tempClient/bootstrap/css/bootstrap.css}" />
+ <link href="../static/tempClient/css/homepage.css" rel="stylesheet" type="text/css" media="screen" th:href="@{/tempClient/css/homepage.css}" />
+ <script src="../static/tempClient/bootstrap/js/jquery-1.7.1.min.js" type="text/javascript" th:src="@{/tempClient/bootstrap/js/jquery-1.7.1.min.js}"></script> 
+ <script src="../static/tempClient/bootstrap/js/bootstrap.js" th:src="@{/tempClient/bootstrap/js/bootstrap.js}"></script> 
+</head>
+
+<body>
+
+<div class="container">
+ 
+
+   <div class="row" id="entete" >   
+      <div class="" id="" ><img src="../static/tempClient/images/header7.png" class="bann" th:src="@{tempClient/images/header7.png}" /> </div>  
+  </div>
+
+   
+   
+
+     <div class="row" id="" align="center" >
+         <div class="span12">
+          <div class="" align="center">  
+          <div class="">
+          
+              
+        <a th:href="@{/homeclient(login=${compte.idcompte})}" class="btn " >
+        <font size="+0" color="#5cbed7"><b>Accueil</b></font>
+        </a>
+        <a th:href="@{/envoi(idcompte=${compte.idcompte})}"  class="btn " role="button">
+        <font size="+0" color="#666666">
+        <b>Envoie</b></font></a>
+        <a th:href="@{/retrait(idcompte=${compte.idcompte})}"  class="btn " role="button"><font size="+0" color="#666666"><b>Retrait</b></font></a>
+          <a   th:href="@{/facture(idcompte=${compte.idcompte})}"  class="btn " role="button"><font size="+0" color="#666666"><b>Factures</b></font></a>
+           <a   th:href="@{/rapport(idcompte=${compte.idcompte})}" class="btn" role="button"><font size="+0" color="#666666"><b>Reporting</b></font></a>
+         <a   th:href="@{/achat(idcompte=${compte.idcompte})}"  class="btn " role="button"><font size="+0" color="#666666"><b>Achats</b></font></a>
+     <a  th:href="@{/ewallet(idcompte=${compte.idcompte})}"  class="btn " role="button"><font size="+0" color="#666666"><b>E - Wallet</b></font></a>
+        <a th:href="@{/client(idcompte=${compte.idcompte})}" class="btn " role="button"><font size="+0" color="#666666"><b>Deconexion</b></font></a>
+            
+          </div>
+          </div>
+          </div>
+     </div>
+
+
+  <table  id="userinfo" width="95%" align="center">
+  		<tr>
+        	<td> <span><b>Agence : </b><span th:text="${compte.nomcompte}"></span></span></td>
+        	<td><span><b>Region :</b> <span th:text="${compte.regioncompte}"></span></span></td> 
+        	<td><span><b>Adresse :</b> <span th:text="${compte.adressecompte}"></span> </span> </td>
+          <td id="usersolde" align="center"><b>Solde :  </b>  <span th:text="${compte.solde}"></span>fcfa</td>
+        </tr>
+  </table> 
+
+   <section class="content" layout:fragment="content">
+
+          <!-- Your Page Content Here -->
+
+        </section>
+  
+
+ 
+
+   <div class="row" id="pied">
+ <div class="">
+   <p align="center">Copyright &copy; Easy Transfert - Tous droits r&eacute;serv&eacute;s</p> 
+  </div>
+  </div>
+
+ 
+    
+  </div>  
+</body>
+</html>

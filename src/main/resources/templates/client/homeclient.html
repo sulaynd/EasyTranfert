@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="templateClient">
+<head>
+<meta charset="utf-8" />
+<title>Isi Transfert</title>
+</head>
+<body>
+<div layout:fragment="content">
+ 
+  
+ 
+   <table cellpadding="10"  align="center">
+  		<tr align="center">
+        	<td> <a   class="btn btn-large" th:href="@{envoi(idcompte=${compte.idcompte})}"><font size="+2" color="#5cbed7"><b>Envoi</b></font></a></td>
+        	<td> <a  th:href="@{retrait(idcompte=${compte.idcompte})}"  class="btn btn-large " ><font size="+2" color="#5cbed7"><b>Reception</b></font></a> </td> 
+        </tr>
+  </table>
+
+  
+</div>
+</body>
+</html>

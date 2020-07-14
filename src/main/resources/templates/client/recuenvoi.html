@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="templateClient">
+<head>
+<meta charset="utf-8" />
+<title>Isi Transfert</title>
+</head>
+<body>
+<div layout:fragment="content">
+ 
+  
+<div class="row" >
+  <div class="span11" id="containpage">
+  
+  	 <input type="hidden" class="input"  name="idcompte" th:value="${compte.idcompte}" />
+  	 	  <table width="100%" >
+  	 	  	<tr align="left">
+  	 	  		<td>
+  	 	  			 <div id="contener" class="span10">
+  	 	  			 	<div id="content" ><span class="titre">Recu d'envoi</span><br/>
+  	 	  			 		  <table id="tabform" class="table" >
+  	 	  			 		  	 <tr>
+                     				<td class="span4"><h6>Expediteur: </h6> 
+                     			
+                     				
+                     				</td>
+                     				
+                     				<td class="span4"><h6>Bénéficiaire: </h6> Dakar 
+                     				
+                     				</td>
+                     				
+                     				<td class="span3"><h6>Bénéficiaire: </h6> Dakar 
+                     				
+                     				</td>
+                 				 </tr>
+  	 	  			 		  </table><hr/>
+  	 	  			 	</div>
+  	 	  			 </div>
+  	 	  		</td>
+  	 	  		
+  	 	  		
+  	 	  		
+  	 	  	</tr>
+  	 	  </table>
+  	 	 
+  	
+  </div>
+</div> 
+  
+  
+  
+  
+ 
+</div>
+</body>
+</html>

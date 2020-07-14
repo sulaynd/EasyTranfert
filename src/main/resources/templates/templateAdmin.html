@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<title>Easy Transfert</title>
+ <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+
+    <link href="../static/tempAdmin/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" th:href="@{/tempAdmin/bootstrap/css/bootstrap.min.css}" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../static/tempAdmin/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" th:href="@{/tempAdmin/dist/css/AdminLTE.min.css}" />
+    <link href="../static/tempAdmin/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" th:href="@{/tempAdmin/plugins/datatables/dataTables.bootstrap.css}" />
+    <link href="../static/tempAdmin/dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" th:href="@{/tempAdmin/dist/css/skins/skin-blue.min.css}"  />
+    
+</head>
+<body class="skin-blue sidebar-mini">
+
+
+
+  <div class="wrapper">
+      <!-- Main Header -->
+      <header class="main-header">
+        <!-- Logo -->
+        <a th:href="@{/homeadmin}" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>A</b>LT</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>Isi </b> Transfert</span>
+        </a>
+
+       
+        <nav class="navbar navbar-static-top" role="navigation">
+         
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+             
+              <li class="dropdown user user-menu">
+                <!-- Menu Toggle Button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <!-- The user image in the navbar-->
+                  <img th:src="@{/tempAdmin/dist/img/avatar5.png}" class="user-image" alt="User Image"/>
+                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                  <span class="hidden-xs">Ibrahima DIAGO</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- The user image in the menu -->
+                  <li class="user-header">
+                    <img src="../tempAdmin/dist/img/avatar5.png" class="img-circle" alt="User Image" />
+                    <p>
+                      Ibrahima DIAGO - Web Developer
+                      <small>Member since Nov. 2012</small>
+                    </p>
+                  </li>
+                 
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    </div>
+                    <div class="pull-right">
+                      <a th:href="@{/administration}" class="btn btn-default btn-flat">Deconnexion</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+     
+      <aside class="main-sidebar">
+
+        
+        <section class="sidebar">
+
+         
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="tempAdmin/dist/img/avatar5.png" class="img-circle" alt="User Image" />
+            </div>
+            <div class="pull-left info">
+              <p>Ibrahima DIAGO</p>
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+
+         
+          <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="Search..."/>
+              <span class="input-group-btn">
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+         
+          <ul class="sidebar-menu">
+            <li class="header">MENU</li>
+              <li class="">
+              <a th:href="@{/prestataire}"><i class='fa fa-link'></i> <span>Prestataire</span> <i class="fa fa-angle-right pull-right"></i></a> 
+            </li>
+             <li>
+              <a th:href="@{/listeagences}"><i class='fa fa-link'></i> <span>Agences</span> <i class="fa fa-angle-right pull-right"></i></a>
+              
+            </li>
+             <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i> <span>Administration</span> <i class="fa fa-angle-right pull-right"></i></a>
+              <ul class="treeview-menu">
+                	<li><a th:href="@{/administrateur}">Administrateur</a></li>
+                	<li><a th:href="@{/controleur}">Controleur</a></li>
+                    <li><a th:href="@{superviseurzone}">Superviseur de zone</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Administration
+            <small>compte Admin</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Home</li>
+          </ol>
+        </section>
+        <section class="content" layout:fragment="content">
+
+      
+
+        </section>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+      <footer class="main-footer">
+       
+        <div class="pull-right hidden-xs">
+         2016 - 2017
+        </div>
+    
+        <strong>Copyright &copy; 2017 <a href="#">ISI</a>.</strong> All rights reserved.
+      </footer>
+  
+      
+      <aside class="control-sidebar control-sidebar-dark">                
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+          <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+          <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+      
+        <div class="tab-content">
+         
+          <div class="tab-pane active" id="control-sidebar-home-tab">
+            <h3 class="control-sidebar-heading">Recent Activity</h3>
+          </div><!-- /.tab-pane -->
+       
+          <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+     
+          <div class="tab-pane" id="control-sidebar-settings-tab">            
+              <h3 class="control-sidebar-heading">General Settings</h3>
+          </div>
+        </div>
+      </aside>
+      <div class='control-sidebar-bg'></div>
+    </div>
+
+
+
+<script th:inline="javascript">
+   // <![CDATA[
+      $(function () {
+        $("#example1").dataTable();
+        $('#example2').dataTable({
+          "bPaginate": true,
+          "bLengthChange": false,
+          "bFilter": false,
+          "bSort": true,
+          "bInfo": true,
+          "bAutoWidth": false
+        });
+      });
+   // ]]>
+</script>
+
+
+
+  	<script src="../static/tempAdmin/plugins/jQuery/jQuery-2.1.3.min.js" th:src="@{/tempAdmin/plugins/jQuery/jQuery-2.1.3.min.js}"></script>
+    <script src="../static/tempAdmin/bootstrap/js/bootstrap.min.js" type="text/javascript" th:src="@{/tempAdmin/bootstrap/js/bootstrap.min.js}"></script>
+   
+  	<script src="../static/tempAdmin/plugins/datatables/jquery.dataTables.min.js" type="text/javascript" th:src="@{/tempAdmin/plugins/datatables/jquery.dataTables.min.js}"></script>
+    <script src="../static/tempAdmin/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript" th:src="@{/tempAdmin/plugins/datatables/dataTables.bootstrap.min.js}"></script>
+
+	<script src="../static/tempAdmin/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript" th:src="@{/tempAdmin/plugins/slimScroll/jquery.slimscroll.min.js}"></script>
+    <script src='../static/tempAdmin/plugins/fastclick/fastclick.min.js' th:src="@{/tempAdmin/plugins/fastclick/fastclick.min.js}"></script>
+    <script src="../static/tempAdmin/dist/js/app.min.js" type="text/javascript" th:src="@{/tempAdmin/dist/js/app.min.js}"></script>
+    <script src="../static/tempAdmin/dist/js/demo.js" type="text/javascript" th:src="@{/tempAdmin/dist/js/demo.js}"></script>
+    
+</body>
+</html>

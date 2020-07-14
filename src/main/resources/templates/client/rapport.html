@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="templateClient">
+<head>
+<meta charset="utf-8" />
+<title>Isi Transfert</title>
+</head>
+<body>
+<div layout:fragment="content">
+ 
+  
+  
+   <div class="row" >
+	  <div class="span11" id="containpage"> 
+	    <h1 align="center">  </h1>
+	  <table class="table table-bordered table-striped" id="tabresultat">
+				           <thead>
+                      <tr>
+                       
+                        <th>Expediteur</th>
+                        <th>Telephone</th>
+                        <th>Bénéficiaire</th>
+                        <th>Telephone</th>
+                        <th>Montant</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr th:each="o:${op}">
+                        <td ><span th:text="${o.prenomsender}"></span> <span th:text="${o.nomsender}"></span></td>
+                         <td ><span th:text="${o.telsender}"></span></td>
+                         <td ><span th:text="${o.prenomrecep}"></span> <span th:text="${o.nomrecep}"></span></td>
+                         <td ><span th:text="${o.telrecep}"></span></td>
+                         <td ><span th:text="${o.montantoper}"></span></td>
+                         <td ><span th:text="${o.dateoper}"></span></td>
+                      </tr>
+                    </tbody> 
+        			</table>
+	  </div>
+   </div>
+
+  
+</div>
+</body>
+</html>

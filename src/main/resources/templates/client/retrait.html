@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="templateClient">
+<head>
+<meta charset="utf-8" />
+<title>Isi Transfert</title>
+</head>
+<body>
+<div layout:fragment="content">
+ 
+  
+  
+  <div class="row" >
+	  <div class="span11" id="containpage"> 
+	  	<div class="accordion" id="accordion3">
+			<div class="accordion-group" id="titreaccordeon1">
+				<div class="accordion-heading" id="headaccordeon">
+					<span><strong>Operation de Paiement</strong></span>  
+				</div>
+				<div class="accordion-inner">
+					<div class="row" id="recherchpaiement">
+				      <div class="span8">
+				        <form class="form-inline">
+				          <label ><b>TYPE :</b></label>
+				          <select class="span2" > <option>Code transaction</option> </select>
+				          <input type="text" class="input" placeholder="Saisir le code" />
+				          <button type="submit" class="btn ">Rechercher</button>
+				        </form>
+				      </div>
+   					</div>
+   					<table class="table table-bordered table-striped" id="tabresultat">
+				          <tr class="success" bgcolor="">
+				            <th>Code</th>  <th>Prenom</th> <th>Nom</th> <th>Telephone</th> <th>Prenom Emeteur</th> <th>Nom Emetteur</th>
+				          </tr> 
+				          <tr>
+				            <td> 22224585</td>  <td width="20%">Ibrahima</td> <td width="20%">Diago</td> <td>774243032</td> <td width="20%">Demba</td> <td width="20%">Fall</td>
+				          </tr>   
+				          <tr>
+				            <td> 22224789</td>  <td>Ahmadou</td> <td>Mbaye</td> <td>775204565</td> <td>Assane</td> <td>Ndiaye</td>
+				          </tr>   
+        			</table>
+        			<div class="row" id="recherchpaiement">
+					      <div class="span8" >
+					        <form class="form-inline">
+					          <label ><b>TYPE :</b></label>
+					          <select class="span2" > <option>CNI</option> <option>Passeport</option> </select>
+					          <input type="text" class="input" placeholder="Saisir le numero de la piece" />
+					          <button type="submit" class="btn ">Payer</button>
+					        </form>
+					      </div>
+   					</div>
+				</div>
+			</div>
+		</div>
+	  </div>
+  </div>
+  
+  
+  
+
+  
+</div>
+</body>
+</html>

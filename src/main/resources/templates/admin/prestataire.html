@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="templateAdmin">
+<head>
+<meta charset="utf-8" />
+<title>Isi Transfert</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+
+
+
+
+  <div class="">
+        
+        <section class="content">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="box box-info">
+                <div class="box-header">
+                  <h3 class="box-title" th:if="${presta==null}">Ajout prestataire</h3>
+                  <h3 class="box-title text-danger" th:if="${presta}">Modification</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+               
+                	<form role="form" th:action="@{/addprestataire}" th:if="${presta}">
+                		<input type="hidden" name="action" />
+ 							  <div class="form-group" >
+ 							  	  <label>Elements général</label>
+			                      <input type="text" class="form-control" placeholder="Nom" name="nompres" th:required="required" maxlength="30" th:value="${presta.nompres}"   /> <br/>
+			                      <input type="text" class="form-control" placeholder="Prénom" name="prenompres" th:required="required"  maxlength="15" th:value="${presta.prenompres}"/><br/>
+			                      <input type="text"  class="form-control" placeholder="CNI" name="cnipres" th:required="required" maxlength="12" minlength="12" th:value="${presta.cnipres}" /><br/>
+			                      <input type="text" class="form-control" placeholder="Adresse" name="adresspres" th:required="required" th:value="${presta.adresspres}"/><br/>
+			                      <input type="text" class="form-control" placeholder="Téléphone Ex: 77 425 12 23" name="telpres" th:required="required"  maxlength="9" minlength="9" th:value="${presta.telpres}"/>
+		                      </div>
+		                      
+	                     	  <div class="form-group">
+		                      <label>Elements d'authentification</label>
+		                      <input type="text" class="form-control" placeholder="Identifiant" name="identifiant" th:required="required" th:disabled="disabled" th:value="${presta.loginpres}" /><br/>
+	                    	  </div>
+	                    	  <div class="box-footer">
+			                    <button type="submit" class="btn btn-primary">Enregister</button>
+			                     <button type="reset" class="btn btn-primary">Annuler</button>
+			                  </div>
+                	</form>
+                	
+                	<form role="form" th:action="@{/addprestataire}" th:if="${presta==null}">
+                		<input type="hidden" name="action" />
+ 							  <div class="form-group" >
+ 							  	  <label>Elements général</label>
+			                      <input type="text" class="form-control" placeholder="Nom" name="nompres" th:required="required" maxlength="30" th:value="${idp}"   /> <br/>
+			                      <input type="text" class="form-control" placeholder="Prénom" name="prenompres" th:required="required"  maxlength="15"/><br/>
+			                      <input type="text"  class="form-control" placeholder="CNI" name="cnipres" th:required="required" maxlength="12" minlength="12" /><br/>
+			                      <input type="text" class="form-control" placeholder="Adresse" name="adresspres" th:required="required"/><br/>
+			                      <input type="text" class="form-control" placeholder="Téléphone Ex: 77 425 12 23" name="telpres" th:required="required"  maxlength="9" minlength="9"/>
+		                      </div>
+		                      
+	                     	  <div class="form-group">
+		                      <label>Elements d'authentification</label>
+		                      <input type="text" class="form-control" placeholder="Identifiant" name="identifiant" th:required="required" /><br/>
+		                      <input type="password" class="form-control" placeholder="Password" name="password" th:required="required"/><br/>
+		                      <input type="password" class="form-control" placeholder="Retapez le mot de passe" name="password2"  th:required="required" />
+	                    	  </div>
+	                    	  <div class="box-footer">
+			                    <button type="submit" class="btn btn-primary">Enregister</button>
+			                     <button type="reset" class="btn btn-primary">Annuler</button>
+			                  </div>
+                	</form>
+                	
+                </div>
+               
+              </div>
+
+              
+            </div>
+            <div class="col-md-8"><a th:href="@{prestataire}" th:if="${presta}" ><button class="btn btn-primary btn-xs">Nouveau</button></a>
+              <div class="box box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Liste des prestataires</h3>
+                  <div class="box-tools">
+                    <ul class="pagination pagination-sm no-margin pull-right">
+                      <li><a href="#">&laquo;</a></li>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">&raquo;</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="box-body no-padding">
+                  <table id="example2" class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>Prénom</th>
+                         <th>Nom</th>
+                        <th>Adresse</th>
+                         <th>Telephone</th>
+                        <th>CNI</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  th:each="p:${listprestataire}">
+                        <td th:text="${p.prenompres}"></td>
+                        <td th:text="${p.nompres}"></td>
+                        <td th:text="${p.adresspres}"></td>
+                         <td th:text="${p.telpres}"></td>
+                        <td th:text="${p.cnipres}"></td>
+                       
+                        <td>
+                        	<a th:href="@{prestataireSingle(idp=${p.idpres})}" class="btn btn-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        	<a th:href="@{editprestataire(idp=${p.idpres})}" class="btn btn-xs"><i class="fa fa-pencil-square-o"></i></a>
+                        	<!-- <a th:href="@{deleteprestataire(idp=${p.idpres})}" th:onclick="'confirm(\'Voulez vraiment supprimer le prestataire\');'" class="btn btn-xs"><i class="fa fa-trash"></i></a> -->
+                        	
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+          <script type="text/javascript" th:inline="javascript">
+      $(function () {
+        $("#example1").dataTable();
+        $('#example2').dataTable({
+          "bPaginate": true,
+          "bLengthChange": false,
+          "bFilter": false,
+          "bSort": true,
+          "bInfo": true,
+          "bAutoWidth": false
+        });
+      });
+    </script>   
+           
+</div>
+</body>
+</html>
